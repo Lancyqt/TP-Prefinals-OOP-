@@ -1,0 +1,350 @@
+package Package1;
+
+public interface Player {
+		  void setPlayerName(String name);
+	}
+
+package Package1;
+
+public interface GameMode {
+		   void play() throws InterruptedException;
+	}
+
+package Package1;
+
+public interface GameDetails {
+		void displayDetails();
+	}
+
+package Package1;
+import java.util.Scanner;
+public class GameHub {
+
+	 public static void main(String[] args) throws InterruptedException  {
+	        AmazonGame amazonGame = new AmazonGame();
+	        amazonGame.displayDetails();
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Enter your name: ");
+	        String playerName = scanner.nextLine();
+	        amazonGame.setPlayerName(playerName);
+
+
+	        amazonGame.play();
+	    }	
+}
+
+package Package1;
+import java.util.Scanner;
+import java.time.LocalTime;
+public class AmazonGame implements Player, GameMode, GameDetails {
+
+	private String playerName;
+
+    public void setPlayerName(String name) {
+        playerName = name;
+    }
+    public void play() throws InterruptedException {
+        System.out.println("Welcome!, " + playerName + "!");
+        System.out.println("Press 1 or 2 to select your game mode.");
+        System.out.println("1 - Story Mode");
+        System.out.println("2 - Survival Mode");
+        Scanner scan = new Scanner(System.in);
+        int select = scan.nextInt();
+        
+        if (select == 1) {
+
+                System.out.println("You selected Story Mode. Let's start!");
+                Thread.sleep(1000);
+                System.out.println("Welcome to Story Mode!");
+                Thread.sleep(1000);
+                System.out.println("We are going to Amazon.");
+                Thread.sleep(1000);
+                System.out.println("Do you want to continue?");
+                System.out.println("Press Y for YES or N for NO");
+                String input = scan.next();
+                Thread.sleep(1000);
+                if(input.equalsIgnoreCase("Y")) {
+                	Thread.sleep(1000);
+                	System.out.println("(Riding a truck)");
+                	Thread.sleep(1000);
+                	System.out.println("Jean: OMG! There is a big rock.");
+                	Thread.sleep(1000);
+                	System.out.println("(The break is broken)");
+                	Thread.sleep(1000);
+                	System.out.println("Jean: We will hit the rock!");
+                	Thread.sleep(1000);
+                	System.out.println("Rudolf: Noooo!");
+                	Thread.sleep(1000);
+                	System.out.println("(BOOOOGGGGHHHHHSHHHHH...)");
+                	Thread.sleep(1000);
+                	System.out.println(playerName + ": Our truck is destroyed, we need to escaped here.");
+                	Thread.sleep(1000);
+                	System.out.println("Rudolf: There are so many animals here.");
+                	Thread.sleep(1000);
+                	System.out.println("Jean: We have to get past them.");
+                	Thread.sleep(1000);
+                	System.out.println("Do you want to continue?");
+                	System.out.println("Press Y for YES or N for NO");
+                	String input1 = scan.next();
+                	Thread.sleep(1000);
+                if(input1.equalsIgnoreCase("Y")) {
+                	Thread.sleep(1000);
+                	System.out.println("<<<<<<<| FIRST STAGE |>>>>>>>");
+                	Thread.sleep(1000);
+                	System.out.println("Narrator: Get Ready your selves.");
+                	Thread.sleep(1000);
+                	System.out.println("Narrator: There is a Lion. We need to past to him.");
+                	Thread.sleep(1000);
+                	System.out.println("Narrator: The Lion is here!");
+                	Thread.sleep(1000);
+                	System.out.println("Lion: GRRRRRRRRRRRRR....");
+                	Thread.sleep(1000);
+                	System.out.println("Narrator: Find a way to escape from the Lion.");
+                	Thread.sleep(1000);
+                	System.out.println("Narrator: Hurry!");
+                	Thread.sleep(1000);
+                	System.out.println("Narrator: Great Job! You escaped from the Lion.");
+                	Thread.sleep(1000);
+                	System.out.println("Do you want to continue?");
+                	System.out.println("Press Y for YES or N for NO");
+                	String input2 = scan.next();
+                	Thread.sleep(1000);
+                	if (input2.equalsIgnoreCase("Y")) {
+                		Thread.sleep(1000);
+                		System.out.println("<<<<<<<| SECOND STAGE |>>>>>>>");
+                		Thread.sleep(1000);
+                		System.out.println("You're now in the water.");
+                		Thread.sleep(1000);
+                		System.out.println("Narrator: We need to past from the Octopus...... The Octopus is here!");
+                		Thread.sleep(1000);
+                		System.out.println("(The Octopus going towards you)");
+                		Thread.sleep(1000);
+                		System.out.println("Narrator: You need to swim faster!");
+                		Thread.sleep(1000);
+                		System.out.println("Narrator: Fasterrr...");
+                		Thread.sleep(1000);
+                		System.out.println("Narrator: Well done! You escaped from the Octopus");
+                		Thread.sleep(1000);
+                		System.out.println("Press Y for YES or N for NO");
+	                	String input3 = scan.next();
+	                	Thread.sleep(1000);
+	                if (input3.equalsIgnoreCase("Y")) {
+	                		System.out.println("<<<<<<<| THIRD STAGE |>>>>>>>");
+	                		Thread.sleep(1000);
+	                		System.out.println("Narrator: We need to find a plane.");
+	                		Thread.sleep(1000);
+	                		System.out.println("Narrator: There is a plane near youuu.");
+	                		Thread.sleep(1000);
+	                		System.out.println("Narrator: You find a plane!");
+	                		Thread.sleep(1000);
+	                		System.out.println("(You're now riding a plane!)");
+	                		Thread.sleep(1000);
+	                		System.out.println("Narrator: Oh no! Their is a big bird following us.");
+	                		Thread.sleep(1000);
+	                		System.out.println("Narrator: We need to hurry!");
+	                		Thread.sleep(1000);
+	                		System.out.println("Narrator: We are now have a long distance to the bird.");
+	                		Thread.sleep(1000);
+	                		System.out.println("Narrator: Amazing! You escaped from the big bird.");
+	                		Thread.sleep(1000);
+	                		System.out.println("\nYou are Brave and Smart! You are now escaped from the Amazon.");
+	                		System.out.println("That's all, Thanks for Playing!");
+	                	}
+	                	else {
+	                		System.out.println("We are stocked in the Amazon.");
+	                	}
+
+                	}
+                	else {
+                		System.out.println("We are stocked in the Amazon.");	                	
+                	}
+
+                }
+                else  {
+                	System.out.println("We are stocked in the Amazon.");
+                }
+        }  
+                else  {
+                	System.out.println("Your trip to Amazon cancelled.");
+                }
+        }
+                else if (select == 2) {
+                System.out.println("You Selected Survival Mode. Get ready for a Challenge!");
+        		Thread.sleep(1000);
+                System.out.println("Welcome to the Survival Mode!");
+                Thread.sleep(1000);
+                System.out.println("\nGet ready for your First Battle!");
+                Thread.sleep(1000);
+                System.out.println("You vs Lion The Great");
+                Thread.sleep(1000);
+                System.out.println("Stage 1, Lets begin! ");
+                Thread.sleep(1000);
+                System.out.println("Press Q to use the Smash or W for Sword Skills");
+                String skill = scan.next();
+                
+                if(skill.equalsIgnoreCase("Q")) {
+                	System.out.println("Using your Smashing Technique.");
+                	Thread.sleep(1000);
+
+                }
+                else if(skill.equalsIgnoreCase("W")) {
+                	System.out.println("Using your Sword Skills.");
+                	Thread.sleep(1000);
+                	
+                }
+                else {
+                	System.out.println("Using your Basic Attack.");
+                	Thread.sleep(1000);
+
+                }
+                System.out.println("You are attacking the enemy...");
+                Thread.sleep(1000);
+                System.out.println("The enemy has been slain!");
+                Thread.sleep(1000);
+                System.out.println("\nGet ready for your Second Battle!");
+                Thread.sleep(1000);
+                System.out.println("You vs Dr. Octo");
+                Thread.sleep(1000);
+                System.out.println("Stage 2, Lets begin! ");
+                Thread.sleep(1000);
+                System.out.println("The enemy is attacking you...");
+                Thread.sleep(1000);
+                System.out.println("You are on defense mode!");
+                Thread.sleep(1000);
+                System.out.println("Press Q to use the Smash or W for Sword Skills");
+                String skill1 = scan.next();
+                
+                if(skill1.equals("Q")) {
+                	System.out.println("Using your Smashing Technique.");
+                	Thread.sleep(1000);
+
+                }
+                else if(skill1.equals("W")) {
+                	System.out.println("Using your Sword Skills.");
+                	Thread.sleep(1000);
+
+
+                }
+                else {
+                	System.out.println("Using your Basic Attack.");
+                	Thread.sleep(1000);
+
+                }
+                System.out.println("You are attacking the enemy...");
+                Thread.sleep(1000);
+                System.out.println("The enemy has been slain!");
+                Thread.sleep(1000);
+                System.out.println("LEVELING UP!");
+                Thread.sleep(1000);
+                System.out.println("New Skills Unlock!");
+                Thread.sleep(1000);
+                System.out.println("\nGet ready for the Next Battle!");
+                System.out.println("Do you want to continue?");
+                System.out.println("Press Y if Yes or N if No");
+                Thread.sleep(1000);
+                String ans1 = scan.next();
+                
+                if(ans1.equalsIgnoreCase("Y")) {
+                	System.out.println("You vs Black Bird");
+                	Thread.sleep(1000);
+                	System.out.println("Stage 3, Lets begin!");
+                	Thread.sleep(1000);
+                	System.out.println("The enemy is attacking you!");
+                	Thread.sleep(1000);
+                	System.out.println("Press Q to use the Smash, W for Sword Skills, or E for the Ultimate Skill");
+                	String skill2 = scan.next();
+	                if(skill2.equalsIgnoreCase("Q")) {
+	                	System.out.println("Using your Smashing Technique.");
+	                	Thread.sleep(1000);
+	                }
+	                else if(skill2.equalsIgnoreCase("W")) {
+	                	System.out.println("Using your Sword Skills.");
+	                	Thread.sleep(1000);
+	                }
+	                else if (skill2.equalsIgnoreCase("E")) {
+	                	System.out.println("Using your Ultimate Skill.");
+	                	Thread.sleep(1000);
+	                }
+	                else {
+	                	System.out.println("Using your Basic Attack.");
+	                	Thread.sleep(1000);
+	                }
+
+	                System.out.println("The enemy has been slain!");
+                	Thread.sleep(1000);
+                	System.out.println("All enemys are dead!");
+                	Thread.sleep(1000);
+                	System.out.println("\nGet Ready for the Final Opponent!");
+                	Thread.sleep(1000);
+                	System.out.println("The Dragon is here!");
+                	Thread.sleep(1000);
+                	System.out.println("The Dragon is attacking you!");
+                	Thread.sleep(1000);
+
+                	System.out.println("Your health bar are getting low...");
+                	Thread.sleep(1000);
+                	System.out.println("You are attacking The Dragon...");
+                	Thread.sleep(1000);
+                	System.out.println("Press Q to use the Smash, W for Sword Skills, or E for the Ultimate Skill");
+                	String skill3 = scan.next();
+                	if(skill3.equalsIgnoreCase("Q")) {
+	                	System.out.println("Using your Smashing Technique.");
+	                	Thread.sleep(1000);
+	                }
+	                else if(skill3.equalsIgnoreCase("W")) {
+	                	System.out.println("Using your Sword Skills.");
+	                	Thread.sleep(1000);
+	                }
+	                else if (skill3.equalsIgnoreCase("E")) {
+	                	System.out.println("Using your Ultimate Skill.");
+	                	Thread.sleep(1000);
+	                }
+	                else {
+	                	System.out.println("Using your Basic Attack.");
+	                	Thread.sleep(1000);
+	                }
+
+                	System.out.println("The Dragon health bar are getting low!...");
+                	Thread.sleep(1000);
+                	System.out.println("The Dragon use his Ultimate skill!");
+                	Thread.sleep(1000);
+                	System.out.println("You are on defense mode!");
+                	Thread.sleep(1000);
+                	System.out.println("Press Q to use the Smash, W for Sword Skills, or E for the Ultimate Skill");
+                	String skill4 = scan.next();
+                	if(skill4.equalsIgnoreCase("Q")) {
+	                	System.out.println("Using your Smashing Technique.");
+	                	Thread.sleep(1000);
+	                }
+	                else if(skill4.equalsIgnoreCase("W")) {
+	                	System.out.println("Using your Sword Skills.");
+	                	Thread.sleep(1000);
+	                }
+	                else if (skill4.equalsIgnoreCase("E")) {
+	                	System.out.println("Using your Ultimate Skill.");
+	                	Thread.sleep(1000);
+	                }
+	                else {
+	                	System.out.println("Using your Basic Attack");
+	                	Thread.sleep(1000);
+	                }
+
+                	Thread.sleep(2000);
+                	System.out.println("Finally! you've defeated The Dragon.");
+                	Thread.sleep(1000);
+                	System.out.println("\nMission Success!");
+                	System.out.println("The Game is over");
+                	System.out.println("Thank's for playing!");
+
+                }
+                else if (ans1.equalsIgnoreCase("N")) {
+                	System.out.println("The Game is Over!");
+                }
+        }
+                else {
+        	System.out.println("Invalid Input");
+                }
+        }
+    		public void displayDetails() {
+	}
+}
